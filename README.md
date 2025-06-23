@@ -92,10 +92,10 @@ The report answers key business questions for Adidas, using interactive visuals 
 ## Dashboard Preview
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/73c6b9da-319d-401d-838d-8cecfbfadf98" width="300" />
-  <img src="https://github.com/user-attachments/assets/7535a811-3db4-4a46-a2e0-29eb255e3d8f" width="300" />
+  <img src="https://github.com/user-attachments/assets/73c6b9da-319d-401d-838d-8cecfbfadf98" width="300" alt="Regional Performance Page" />
+  <img src="https://github.com/user-attachments/assets/7535a811-3db4-4a46-a2e0-29eb255e3d8f" width="300" alt="Product and Sales Method Analysis Page" />
   <br>
-  <img src="https://github.com/user-attachments/assets/fc6fa827-ee45-4e1a-894c-df6b25cb6cb5" width="300" />
-  <img src="https://github.com/user-attachments/assets/2cfd93e5-90b3-46cf-97c9-560b370e7b61" width="300" />
+  <img src="https://github.com/user-attachments/assets/fc6fa827-ee45-4e1a-894c-df6b25cb6cb5" width="300" alt="Trends Over Time Page" />
+  <img src="https://github.com/user-attachments/assets/2cfd93e5-90b3-46cf-97c9-560b370e7b61" width="300" alt="Top Retailer Page" />
 </p>
 
