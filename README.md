@@ -31,43 +31,42 @@ The dashboard explores key business areas such as regional performance, product 
 
 ## DAX Measures Used
 - **Total Sales**  
-  `Total_Sales = SUM('Data Sales Adidas'[Total Sales])`
+  Total_Sales = SUM('Data Sales Adidas'[Total Sales])  
 
 - **Total Profit**  
-  `Total_Profit = SUM('Data Sales Adidas'[Operating Profit])`
+  Total_Profit = SUM('Data Sales Adidas'[Operating Profit])  
 
 - **Units & Margins**  
-  `Total_Units = SUM('Data Sales Adidas'[Units Sold])`  
-  `Avg_Margin = AVERAGE('Data Sales Adidas'[Operating Margin])`
+  Total_Units = SUM('Data Sales Adidas'[Units Sold])  
+  Avg_Margin = AVERAGE('Data Sales Adidas'[Operating Margin])  
 
 - **Sales by Method**  
-  `Sales by Method = SUMX(FILTER('Data Sales Adidas', 'Data Sales Adidas'[Sales Method] = "Online"), 'Data Sales Adidas'[Total Sales])`
+  Sales by Method = SUMX(FILTER('Data Sales Adidas', 'Data Sales Adidas'[Sales Method] = "Online"), 'Data Sales Adidas'[Total Sales])  
 
 - **Date Table**  
-  `Date Table = CALENDAR(MIN('Data Sales Adidas'[Invoice Date]), MAX('Data Sales Adidas'[Invoice Date]))`
+  Date Table = CALENDAR(MIN('Data Sales Adidas'[Invoice Date]), MAX('Data Sales Adidas'[Invoice Date]))  
 
 - **Year-on-Year Profit % Growth**  
-  ```DAX
-  YoY Profit Growth % = 
-  VAR CurrentYearProfit = CALCULATE([Total_Profit], 'Date Table'[Year] = 2021)
-  VAR LastYearProfit = CALCULATE([Total_Profit], 'Date Table'[Year] = 2020)
-  RETURN DIVIDE(CurrentYearProfit - LastYearProfit, LastYearProfit)
+  YoY Profit Growth % =   
+  VAR CurrentYearProfit = CALCULATE([Total_Profit], 'Date Table'[Year] = 2021)  
+  VAR LastYearProfit = CALCULATE([Total_Profit], 'Date Table'[Year] = 2020)  
+  RETURN DIVIDE(CurrentYearProfit - LastYearProfit, LastYearProfit)  
 
-- **Top Retailer & Sales**
-  Top Retailer Sales = 
-VAR SelectedRetailer = 
-    CALCULATE(
-        MAX('Data Sales Adidas'[Retailer]),
-        FILTER(
-            'Data Sales Adidas',
-            'Data Sales Adidas'[Total Sales] = CALCULATE(MAX('Data Sales Adidas'[Total Sales]))
-        )
-    )
-RETURN 
-    CALCULATE(
-        [Total_Sales],
-        'Data Sales Adidas'[Retailer] = SelectedRetailer
-    )
+- **Top Retailer & Sales**  
+  Top Retailer Sales =   
+VAR SelectedRetailer =   
+    CALCULATE(  
+        MAX('Data Sales Adidas'[Retailer]),  
+        FILTER(  
+            'Data Sales Adidas',  
+            'Data Sales Adidas'[Total Sales] = CALCULATE(MAX('Data Sales Adidas'[Total Sales]))  
+        )  
+    )  
+RETURN   
+    CALCULATE(  
+        [Total_Sales],  
+        'Data Sales Adidas'[Retailer] = SelectedRetailer  
+    )  
 
 
 ## Analysis and Charts
